@@ -54,6 +54,9 @@ def get_file_by_hash(katap_ip, username, password, katap_url):
 	# get file by hash from katap
 
 	session = requests.Session()
+	
+	# log in katap
+	
 	request = session.post(f"https://{katap_ip}/apt/api/userLogin", verify=False, headers=headersAuthPOST,
 	json={"username":username,"password":password,"local":False})
 	
@@ -71,6 +74,8 @@ def get_file_by_hash(katap_ip, username, password, katap_url):
 	
   	#hash = hash.replace("[{hash:",'')
 	#hash = hash.replace("}]",'')
+	
+	# get file from katap
 	
 	request = session.get(f"https://{katap_url}:8443/apt/api/detectedFile?md5=" + hash, verify=False, headers=headersAuthGET)
 
