@@ -67,9 +67,9 @@ def get_file_by_hash(katap_ip, username, password, katap_url):
 
 	hash = sys.argv[1]
   
-  # hash cleaning - optional
+  	# hash cleaning - optional
 	
-  #hash = hash.replace("[{hash:",'')
+  	#hash = hash.replace("[{hash:",'')
 	#hash = hash.replace("}]",'')
 	
 	request = session.get(f"https://{katap_url}:8443/apt/api/detectedFile?md5=" + hash, verify=False, headers=headersAuthGET)
