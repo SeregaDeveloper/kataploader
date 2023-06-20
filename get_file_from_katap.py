@@ -78,9 +78,6 @@ def get_file_by_hash(katap_ip, username, password, katap_url):
 	# get file from katap
 	
 	request = session.get(f"https://{katap_url}:8443/apt/api/detectedFile?md5=" + hash, verify=False, headers=headersAuthGET)
-
-	# if u want to sand file
-	
 	filename = hash + ".zip"
 	file = open(filename,'wb')
 	file.write(request.content) 
