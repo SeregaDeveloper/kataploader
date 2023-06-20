@@ -63,13 +63,16 @@ def get_file_by_hash(katap_ip, username, password, katap_url):
 	if('"success": true' in request.text):
 		print("")
 	else:
-		print("login error")
+		print("Login error")
 		return False
   
 	# MD5 hash is supported, maybe someting else
 
-	hash = sys.argv[1]
-  
+	try:
+		hash = sys.argv[1]
+	except:
+		print("No valid hash provided, try again")  
+
   	# hash cleaning - optional
 	
   	#hash = hash.replace("[{hash:",'')
@@ -84,4 +87,7 @@ def get_file_by_hash(katap_ip, username, password, katap_url):
 	
 	# then u can send it to sandbox or attach to incident in IRP
 	
-main()
+try:
+	main()
+except Exception as err:
+	print(f"Some error occurred: {err}")
