@@ -1,2 +1,3 @@
 # get_file_from_katap
-This script can load file from KATAP by hash
+
+Usage: python3 get_file_from_katap.py <MD5 hash>
