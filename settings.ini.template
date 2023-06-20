@@ -1,0 +1,6 @@
+[katap]
+ip="192.168.0.1:8443"
+username="user"
+password="pass"
+url="katap_url"
+path="/path/to/save/file/"
